@@ -1,0 +1,22 @@
+<div class="modal">
+  <ion-header-bar>
+    <h1 class="title" ng-model="modal.errorTitle"><i class="icon ion-alert-circled"></i> {{modal.errorTitle}}</h1>
+  </ion-header-bar>
+  <ion-content>
+    <div class="row row-center height80">
+      <div class="col tcenter" ng-model="modal.errorMsg">
+        <h1>{{modal.errorMsg}}</h1>
+      </div>
+    </div>
+    
+    <div class="row row-bottom" ng-if="!modal.booleanModal">
+      <button class="button button-full button-energized" ng-click="closeModal()">Cerrar</button>
+    </div>
+  
+    <div class="row row-bottom" ng-if="modal.booleanModal">
+      <button class="button button-full button-assertive" ng-if="modal.confirmFunction != ''" ng-click="modal.confirmFunction != '' ? modal.confirmFunction(this) : closeModal()">Aceptar</button>
+      <button class="button button-full button-royal" ng-click="modal.abortFunction != '' ? modal.abortFunction(this) : closeModal()">Cancelar</button>
+    </div>
+  
+  </ion-content>
+</div>

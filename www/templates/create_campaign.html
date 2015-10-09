@@ -1,0 +1,55 @@
+<ion-view view-title="Crear Campaña">
+  <ion-content>
+
+  	<form id="createCampaign" ng-submit="createCampaign()">
+
+		<div class="list">
+		  <label class="item item-input item-stacked-label">
+		    <i class="icon ion-flag"></i> <span class="input-label">Nombre de la campaña</span>
+		    <input type="text" placeholder="Ingresa un nombre..." ng-model="campaignItem.campaignName">
+		  </label>
+
+		  
+			<div class="item">
+				<div class="row tcenter">
+					<div class="col col-bottom">
+						Total de Dinero a Recaudar
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-10 col-center totalAmmountValue">
+					 	<i class="icon ion-social-usd"></i>
+					</div>
+					<div class="col">
+				  		<input type="text" name="totalAmmountValue" class="totalAmmountValue" ng-model="campaignItem.totalAmmount">
+				  	</div>
+			  	</div>
+			</div>
+
+			<div class="item range">
+			  <i class="icon ion-minus-round"></i>
+			  <input type="range" name="totalAmmountRange" min="100" max="1000" step="50" ng-model="campaignItem.totalAmmount">
+			  <i class="icon ion-plus-round"></i>
+			</div>
+		</div>
+
+			<ul class="list">
+			  <li class="item item-toggle">
+			     <i class="icon {{campaignItem.isPrivate == true ? 'ion-locked' : 'ion-unlocked'}}"></i> Campaña Privada
+			     <label class="toggle toggle-assertive">
+			       <input type="checkbox" ng-model="campaignItem.isPrivate">
+			       <div class="track">
+			         <div class="handle"></div>
+			       </div>
+			     </label>
+			  </li>
+			</ul>
+		
+		<div class="row row-top">
+			<button class="button button-block button-balanced">Crear</button>
+		</div>
+
+	</form>
+  
+  </ion-content>
+</ion-view>

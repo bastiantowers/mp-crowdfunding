@@ -1,0 +1,118 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+
+// Include Variables file
+@import "variables";
+
+// Include Mixins file
+@import "mixins";
+
+
+html, body{
+    height: 100%;
+}
+
+
+.nav-logo{margin-left: 26px;}
+
+.back-text{
+	display: none !important;
+}
+
+/* STANDARDS */
+/* ========= */
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak{
+  display: none !important;
+}
+
+.tleft{text-align:left}
+.tcenter{text-align:center}
+.tright{text-align:right}
+
+.fnone{float: none}
+.fleft{float: left}
+.fright{float: right}
+
+.fsize-small{font-size: $fsize-small;}
+
+.t-light-grey{color: $grey-light;}
+
+/* HEIGHTS CLASSES */
+    $calculateHeight : 0;
+    @for $i from 1 through 20{
+        $calculateHeight : $calculateHeight + 5;
+        .height#{$calculateHeight}{@include height(#{$calculateHeight + "%"});}
+    }
+/* ending cadena... */
+
+ion-content.row,
+div.scroll{
+    @extend .height100;
+}
+
+.width100{
+    width: 100%;
+}
+
+/* CREATE CAMPAIGN VIEW */
+.totalAmmountValue{
+	font-size: $fsize-large-big !important;
+	height: ($fsize-large-big + 20) !important;
+	width: 100%;
+	text-align:center;
+
+	.ion-social-usd {
+		font-size: ($fsize-large-big - 10) !important;
+	}
+}
+
+.ion-locked {
+	color: $assertive;
+}
+
+/* SHARE CAMPAIGNS */
+.share-networks {
+	text-align: center;
+	i {
+		font-size: $fsize-large;
+		&.ion-social-facebook{
+			color: #45619D;
+		}
+		&.ion-social-twitter{
+			color: #55ACEE;
+		}
+		&.ion-social-googleplus{
+			color: #DC4B3F;
+		}
+		&.ion-social-whatsapp{
+			color: #09D261;
+		}
+	}
+}
+
+.ion-checkmark-circled {
+	color: $balanced;
+	font-size: $fsize-large-big;
+}
+

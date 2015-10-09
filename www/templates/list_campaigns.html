@@ -1,0 +1,21 @@
+<ion-view cache-view="false" view-title="Mis Campañas">
+  <ion-content>
+
+		<div class="list">
+		  <div class="item item-divider">Campañas Activas</div>
+		  <a class="item" ng-if="allCampaignItems == ''">No hay campañas activas...</a>
+		  <a class="item" ng-repeat="campaignItem in allCampaignItems">
+		  	<i class="icon ion-locked" ng-if="campaignItem.doc.isPrivate"></i> {{campaignItem.doc.campaignName}} <i class="icon ion-minus-circled fright" ng-click="endCampaignItem(campaignItem.doc)"></i>
+		  </a>
+		</div>
+
+		<div class="list">
+		  <div class="item item-divider">Campañas Finalizadas</div>
+		  <a class="item" ng-if="allCampaignEndedItems == ''">No hay campañas finalizadas...</a>
+		  <a class="item" ng-repeat="campaignEndedItem in allCampaignEndedItems">
+		  	<i class="icon ion-locked" ng-if="campaignEndedItem.doc.isPrivate"></i>{{campaignEndedItem.doc.campaignName}}<i class="icon ion-trash-a fright" ng-click="deleteCampaignItem(campaignEndedItem.doc)"></i>
+		  </a>
+		</div>
+
+  </ion-content>
+</ion-view>
